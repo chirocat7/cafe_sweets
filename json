@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
+body {
+  background-color: #ffd7f678;
+  font-family: "M PLUS 2", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #ddd;
+}
+header, nav, h2, .Main-visual, footer {
+  font-family: "Hachi Maru Pop", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+/* ロード時のフェードイン処理 */
+#Fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+/* JavaScriptで追加されるクラス：フェードイン完了状態 */
+.Fade-in-active {
+    opacity: 1 !important;
+}
+header {
+  width: 100%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #e993d7;
+  position: relative;
+}
+header .Heading {
+  font-size: 32px;
+}
+.Nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  gap: 30px;
+}
+.Social {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  display: flex;
+  gap: 10px;
+}
+.Social a {
+  width: 30px; 
+  height: 30px; 
+}
+/* img要素自体はa要素の中で幅100%になるようにする */
+.Social a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Nav-list-item {
+  list-style: none;
+  margin: 0 20px;
+}
+.Main-visual {
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/カフェ2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.Slidein {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.Main-visual-content {
+  height: 100vh;
+  width: 40%;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 105px;
+  transition: transform 0.8s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+/* JSで親要素に.Slide_activeが追加されたら、子要素を元の位置に戻す */
+.Slidein.Slide_active .Main-visual-content {
+  transform: translateX(0);
+}
+.Main-visual-text {
+  color: #fff;
+}
+.Main-visual-name {
+  margin: 30px;
+  color: #fff;
+}
+section {
+  margin-top: 50px;
+}
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+.Menu-heading {
+  border-bottom: 8px solid #e7e7e7;
+  text-align: center;
+  line-height: 0.6;
+  color: black;
+  width: 20%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.Menu-box {
+  padding: 50px 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+}
+/* メニューアイテムのスクロールアニメーション初期状態 */
+.Menu-item {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+  display: flex; /* 画像とテキストを横並びにする */
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap; /* 小さい画面で折り返すために残す */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+/* JavaScriptで追加されるクラス：画面内に入った時の状態 */
+.Menu-item.Inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+.Menu-text {
+  padding-left: 30px;
+  padding-right: 10px;
+}
+.Menu-image {
+  width: 100%;
+  height: 300px;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+}
+#News {
+  margin: 0 auto;
+  max-width: 1200px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+#News.Inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+.New {
+  display: inline-block;
+  padding: 5px 8px;
+  background-color: #acabab;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+}
+.News-heading {
+  border-bottom: 8px solid #e7e7e7;
+  text-align: center;
+  line-height: 0.6;
+  color: black;
+  width: 20%;
+  margin: 0 auto;
+}
+.News-box {
+  padding: 50px 0 10px 0;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.News-title {
+  text-align: center;
+  color: black;
+}
+.News-sub-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.News-box img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+.News-message {
+  text-align: center;
+  padding: 10px;
+}
+.News-text-group {
+  padding-top: 100px;
+}
+.News-text-group-coffee {
+  order: 2;
+  padding-top: 100px;
+}
+.Access-heading {
+  text-align: center;
+  border-bottom: 8px solid #e7e7e7;
+  line-height: 0.6;
+  color: black;
+  width: 20%;
+  margin: 0 auto;
+}
+.Access-box {
+  padding: 50px 0 10px 0;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+.Access-info {
+  width: 100%;
+}
+.Row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Access-label {
+  font-weight: bold;
+}
+.Access-reservation {
+  border: 1px solid #c4c4c4;
+  margin: 0 auto;
+  width: 400px;
+}
+.Reservation-title {
+  text-align: center;
+  font-weight: bold;
+}
+.Reservation-tel {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+footer {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+   background-color: #e993d7;
+}
+.Footer-text {
+  color: #fff;
+}
+
+@media screen and (max-width: 760px) {
+section {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.Nav-list {
+  width: 100%;
+  display: flex;
+}
+.Nav-list-item {
+  margin: 0 0 10px 0;
+}
+.Social {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 30px;
+  display: block;
+}
+.Main-visual {
+  width: 100%;
+  height: 500px;
+}
+.Main-visual-content {
+  width: 100%;
+  height: 500px;
+}
+main {
+  width: 100%;
+  display: block;
+}
+#News {
+  width: 80%;
+}
+.News-box {
+  display: block;
+  text-align: center;
+}
+.News-image {
+  width: 300px;
+  height: 300px;
+}
+.Menu-heading {
+  width: 30%;
+  height: 10%;
+  line-height: 1;
+}
+.Menu-box {
+  padding: 50px 0 50px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
+}
+.Menu-item {
+  display: block;
+}
+.Menu-image {
+  width: 100%;
+  height: 300px;
+}
+.News-box img {
+  width: 100%;
+  height: 400px;
+}
+.News-text-group {
+  padding-top: 10px;
+}
+.News-text-group-coffee {
+  padding-top: 0px;
+}
+.Access-heading {
+  width: 30%;
+}
+.Access-box {
+  padding: 50px 5px 10px 5px;
+  display: block;
+  text-align: center;
+}
+.Access-info {
+  width: 100%;
+}
+.Access-reservation {
+  width: 100%;
+  margin: 20px 0;
+}
+}
+
+@media screen and (max-width: 426px) {
+  .Menu-box {
+  padding: 50px 0 50px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
+}
+}
