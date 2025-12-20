@@ -7,43 +7,50 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=M+PLUS+2:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
     <link rel="icon" href="img/shortcake-svgrepo-com.png">
   </head>
   <body>
-    <div id="Fade-in">
-    <header>
-      <h1 class="Heading">
-        <a href="index.html">Cafe Sweets</a>
+    <div id="Fade-in" >
+    <header class="l-header">
+      <h1 class="l-header__logo">
+        <a href="index.html" class="l-header__logo-link">Cafe Sweets</a>
       </h1>
-      <nav>
-        <ul class="Nav-list">
-           <li class="Nav-list-item">
-            <a href="index.html">Home</a>
+      <nav class="l-header__nav">
+        <ul class="p-nav-list">
+           <li class="p-nav-list__item">
+            <a href="index.html" class="p-nav-list__link">Home</a>
             </li>
-            <li class="Nav-list-item">
-              <a href="#Menu">Menu</a>
+            <li class="p-nav-list__item">
+              <a href="#Menu" class="p-nav-list__link">Menu</a>
             </li>
-            <li class="Nav-list-item">
-              <a href="#News">News</a>
+            <li class="p-nav-list__item">
+              <a href="#News" class="p-nav-list__link">News</a>
             </li>
         </ul>
       </nav>
-      <div class="Social">
-        <a href="#"><img src="img/instagram-1-svgrepo-com.svg"></a>
-        <a href="#"><img src="img/youtube-svgrepo-com.svg"></a>
-        <a href="#"><img src="img/facebook-svgrepo-com.svg"></a>
+      <div class="l-header__social p-social">
+        <a href="#" class="p-social__link">
+          <img src="img/instagram-1-svgrepo-com.svg" alt="p-social__icon">
+        </a>
+        <a href="#" alt="p-social__link">
+          <img src="img/youtube-svgrepo-com.svg" alt="p-social__icon">
+        </a>
+        <a href="#" alt="p-social__link">
+          <img src="img/facebook-svgrepo-com.svg" alt="p-social__icon">
+        </a>
       </div>
     </header>
 
-    <div class="Main-visual">
-    	<div class="Slidein Slide_left">
-      <div class="Main-visual-content">
-        <p class="Main-visual-text">
+    <div class="l-mv">
+    	<div class="p-mv slide-in is-slide-left">
+      <div class="p-mv__content">
+        <p class="p-mv__text">
           『cafe sweets』をご覧いただきありがとうございます<br>
           パティシエが一つ一つ丁寧に作ったスイーツたちです<br>
           素敵な時間をお過ごしください
         </p>
-        <p class="Main-visual-name">
+        <p class="p-mv__name">
           By chef.
         </p>
       </div>
@@ -51,106 +58,122 @@
     </div>
   </div>
     <main>
-      <section id="Menu">
-          <h2 class="Menu-heading">MENU LIST</h2>
-          <div class="Menu-box">
-            <div class="Menu-item">
-              <img class="Menu-image" src="img/ショートケーキ.jpg">
-             <div class="Menu-text">
-               <h3 class="Menu-title">
+      <section id="Menu" class="l-section p-menu">
+          <h2 class="p-Menu__heading">MENU LIST</h2>
+          <div class="p-menu__list">
+            <div class="p-Menu__item">
+              <div class="p-menu__image-wrapper">
+                <img class="p-Menu__image" src="img/ショートケーキ.jpg" alt="ショートケーキ">
+                <span class="c-label-new">New</span>
+              </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
                  ショートケーキ<br>
-                 ￥500
+                 <span class="p-menu__price">￥500</span>
                </h3>
-               <span class="New">New</span>
-               <p class="Menu-introduction">当店一押しのショートケーキです。いちごの甘さが癖になる商品</p>
+               <p class="p-Menu__introduction">当店一押しのショートケーキです。いちごの甘さが癖になる商品</p>
              </div>
            </div>
-           <div class="Menu-item">
-            <img class="Menu-image" src="img/チーズケーキ.jpg">
-           <div class="Menu-text">
-             <h3 class="Menu-title">
-               チーズケーキ＆バニラアイス<br>
-               ￥800
-             </h3>
-             <span class="New">New</span>
-             <p class="Menu-introduction">濃厚なチーズとバニラアイスの相性が抜群なおいしさ</p>
+           <div class="p-Menu__item">
+            <div class="p-menu__image-wrapper">
+              <img class="p-Menu__image" src="img/チーズケーキ.jpg" alt="チーズケーキ＆バニラ">
+              <span class="c-label-new">New</span>
+            </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
+                 チーズケーキ＆バニラアイス<br>
+                 <span class="p-menu__price">￥800</span>
+               </h3>
+             <p class="p-Menu__introduction">濃厚なチーズとバニラアイスの相性が抜群なおいしさ</p>
            </div>
            </div>
-           <div class="Menu-item">
-            <img class="Menu-image" src="img/イチゴのホールケーキ.jpg">
-           <div class="Menu-text">
-             <h3 class="Menu-title">
-               イチゴのホールケーキ<br>
-               ￥1,500
-             </h3>
-             <span class="New">New</span>
-             <p class="Menu-introduction">イチゴを贅沢に使用したケーキ、イチゴのホイップが甘くて最高</p>
+           <div class="p-Menu__item">
+            <img class="p-Menu__image" src="img/イチゴのホールケーキ.jpg" alt="イチゴのホールケーキ">
+            <span class="c-label-new">New</span>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
+                 イチゴのホールケーキ<br>
+                 <span class="p-menu__price">￥1,500</span>
+               </h3>
+             <p class="p-Menu__introduction">イチゴを贅沢に使用したケーキ、イチゴのホイップが甘くて最高</p>
            </div>
            </div>
-           <div class="Menu-item">
-            <img class="Menu-image" src="img/パンケーキ.jpg">
-           <div class="Menu-text">
-             <h3 class="Menu-title">
-               パンケーキ<br>
-               ￥800
-             </h3>
-             <span class="New">New</span>
-             <p class="Menu-introduction">シロップと7層のパンケーキが甘くてホッとする商品</p>
+           <div class="p-Menu__item">
+            <div class="p-menu__image-wrapper">
+              <img class="p-Menu__image" src="img/パンケーキ.jpg" alt="パンケーキ">
+              <span class="c-label-new">New</span>
+            </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
+                 パンケーキ<br>
+                 <span class="p-menu__price">￥800</span>
+               </h3>
+             <p class="p-Menu__introduction">シロップと7層のパンケーキが甘くてホッとする商品</p>
            </div>
            </div>
-           <div class="Menu-item">
-            <img class="Menu-image" src="img/マカロン.jpg">
-           <div class="Menu-text">
-             <h3 class="Menu-title">
-               マカロン<br>
-               ￥400
-             </h3>
-             <span class="New">New</span>
-             <p class="Menu-introduction">ふんわりサクサクのマカロンです。お味はチョコ、いちご、バニラ、ピスタチオ</p>
+           <div class="p-Menu__item">
+            <div class="p-menu__image-wrapper">
+              <img class="p-Menu__image" src="img/マカロン.jpg" alt="マカロン">
+              <span class="c-label-new">New</span>
+            </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
+                 マカロン<br>
+                 <span class="p-menu__price">￥400</span>
+               </h3>
+             <p class="p-Menu__introduction">ふんわりサクサクのマカロンです。お味はチョコ、いちご、バニラ、ピスタチオ</p>
            </div>
            </div>
-           <div class="Menu-item">
-            <img class="Menu-image" src="img/マロンケーキ.jpg">
-           <div class="Menu-text">
-             <h3 class="Menu-title">
-               マロンケーキ<br>
-               ￥550
-             </h3>
-             <span class="New">New</span>
-             <p class="Menu-introduction">マロンの食感と甘さが楽しめる商品です。マロン好きにはたまりません</p>
+           <div class="p-Menu__item">
+            <div class="p-menu__image-wrapper">
+              <img class="p-Menu__image" src="img/マロンケーキ.jpg" alt="マロンケーキ">
+              <span class="c-label-new">New</span>
+            </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
+                 マロンケーキ<br>
+                 <span class="p-menu__price">￥550</span>
+               </h3>
+             <p class="p-Menu__introduction">マロンの食感と甘さが楽しめる商品です。マロン好きにはたまりません</p>
            </div>
            </div>
-             <div class="Menu-item">
-               <img class="Menu-image" src="img/ドーナツ.jpg">
-               <div class="Menu-text">
-                 <h3 class="Menu-title">
+             <div class="p-Menu__item">
+               <div class="p-menu__image-wrapper">
+                 <img class="p-Menu__image" src="img/ドーナツ.jpg" alt="ドーナツ">
+                 <span class="c-label-new">New</span>
+               </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
                  チョコドーナツ<br>
-                 ￥200
-                 </h3>
-                 <span class="New">New</span>
-                 <p class="Menu-introduction">チョコをビターに仕上げた大人向けの商品、カラースプレーの甘さでちょうどいい</p>
+                 <span class="p-menu__price">￥200</span>
+               </h3>
+                 <p class="p-Menu__introduction">チョコをビターに仕上げた大人向けの商品、カラースプレーの甘さでちょうどいい</p>
                </div>
              </div>
-             <div class="Menu-item">
-              <img class="Menu-image" src="img/プリン.jpg">
-              <div class="Menu-text">
-                <h3 class="Menu-title">
-                プリン<br>
-                ￥300
-                </h3>
-                <span class="New">New</span>
-                <p class="Menu-introduction">なめらかなくちどけのカスタードプリンです。しつこくない甘さでカラメルがマッチしてます</p>
+             <div class="p-Menu__item">
+              <div class="p-menu__image-wrapper">
+                <img class="p-Menu__image" src="img/プリン.jpg" alt="プリン">
+                <span class="c-label-new">New</span>
+              </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
+                 プリン<br>
+                 <span class="p-menu__price">￥300</span>
+               </h3>
+                <p class="p-Menu__introduction">なめらかなくちどけのカスタードプリンです。しつこくない甘さでカラメルがマッチしてます</p>
               </div>
             </div>
-             <div class="Menu-item">
-              <img class="Menu-image" src="img/ロールケーキ.jpg">
-              <div class="Menu-text">
-                <h3 class="Menu-title">
-                ロールケーキ<br>
-                ￥400
-                </h3>
-                <span class="New">New</span>
-                <p class="Menu-introduction">ふわふわとした食感で、生クリームが甘すぎない昔ながらのロールケーキです</p>
+             <div class="p-Menu__item">
+              <div class="p-menu__image-wrapper">
+                <img class="p-Menu__image" src="img/ロールケーキ.jpg" alt="ロールケーキ">
+                <span class="c-label-new">New</span>
+              </div>
+             <div class="p-Menu__body">
+               <h3 class="p-Menu__title">
+                 ロールケーキ<br>
+                 <span class="p-menu__price">￥400</span>
+               </h3>
+                <p class="p-Menu__introduction">ふわふわとした食感で、生クリームが甘すぎない昔ながらのロールケーキです</p>
               </div>
             </div>
            </div>
@@ -208,6 +231,5 @@
       <p class="Footer-text">©Cafe Sweets.inc</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="main.js"></script>
   </body>
 </html>
