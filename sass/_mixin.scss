@@ -1,0 +1,66 @@
+//使い回し度 100%： どのプロジェクトでもそのままコピーして使います。
+// メディアクエリ（レスポンシブ）を簡単に書く
+@use "config" as c; // ブレイクポイント等の変数を読み込む場合
+
+// 1. メディアクエリ (Media Query)
+// 使い方: @include m.mq(sp) { ... }
+@mixin mq($bp: sp) {
+  @media #{map-get(c.$breakpoints, $bp)} {
+    @content;
+  }
+}
+
+// 2. 上下左右中央揃え (Flexbox)
+// 使い方: @include m.flex-center;
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 3. コンテンツ幅の固定 (Inner)
+// 使い方: @include m.inner(1200px);
+@mixin inner($width: 1000px, $padding: 20px) {
+  width: 100%;
+  max-width: $width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+// 4. PCのみのホバーイベント (Hover)
+// スマホでのタップ時の色残りを防ぎます
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// 5. 文字の省略 (Line Clamp)
+// 使い方: @include m.line-clamp(2); (2行超えたら...)
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+// 6. 背景画像の基本設定 (Background)
+@mixin bg-full {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// ---------------------------------------------------------
+// 関数 (Functions)
+// ---------------------------------------------------------
+
+// pxをremに自動変換する
+// 使い方: font-size: m.rem(20);
+@function rem($px) {
+  @return ($px / 16) * 1rem;
+}

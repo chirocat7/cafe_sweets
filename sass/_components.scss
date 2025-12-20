@@ -1,0 +1,34 @@
+//使い回し度 70%： 構造をコピーして、Mixinを活用して仕上げます。
+/*
+「枠組み（Layout）」が決まった後の、中身のデザインを細かく作り込みます。
+装飾: 背景色、枠線（border）、角丸（border-radius）、影（box-shadow）。
+テキスト: フォントの太さ、行間、ホバーした時の色の変化。
+アニメーション: マウスを乗せた時や、クリックした時の「動きのルール」。
+*/
+@use "config" as c;
+@use "mixin" as m;
+
+.c-btn {
+  display: inline-block;
+  padding: 1em 2em;
+  background-color: c.$color-main;
+  color: #fff;
+  text-decoration: none;
+  border-radius: c.$radius-base;
+  transition: c.$transition-base;
+  cursor: pointer;
+  border: none;
+
+  @include m.hover {
+    opacity: 0.8;
+  }
+
+  &--primary {
+    background-color: c.$color-accent;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: m.rem(16);
+  }
+}

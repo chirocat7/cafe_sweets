@@ -1,0 +1,21 @@
+//使い回し度 90%： 読み込み順序を固定します。
+// 1. 変数とMixin（一番最初）
+@use "config" as c;
+@use "mixin" as m;
+
+// 2. 基本パーツ
+@use "components" as comp;
+
+// 3. 配置レイアウト
+@use "layout" as l;
+
+@use "project" as p;
+
+.l-header {
+  width: 100%;
+  padding: 20px;
+  
+  @include m.mq(sp) {
+    padding: 10px;
+  }
+}

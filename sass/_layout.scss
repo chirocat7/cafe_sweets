@@ -1,0 +1,27 @@
+//使い回し度 20%： クラス名のルールだけ真似して中身は書き換えます。
+/*
+ページ全体の構成要素: header, main, footer, nav, sidebar などの外枠。
+コンテナ（Container）: コンテンツが広がりすぎないように幅を制限する中央寄せの設定。
+配置ルール: display: flex や grid を使った、大きなエリアの並び方。
+*/
+
+// _layout.scss の一番上
+@use "config" as c;
+@use "mixin" as m;
+
+.l-container {
+  // mixinを使って定義を共通化
+  @include m.inner(c.$inner-width);
+}
+
+.l-mv {
+  height: 60vh;
+  background: #eee;
+  @include m.flex-center;
+  text-align: center;
+
+  &__img img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,27 @@
+@use "mixin" as m;
+
+// 3. メインビジュアルの「中身の並び」
+.p-mv-content {
+  text-align: center; // 文字を中央に
+
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+}
+
+.p-feature {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+    // スマホで画像と文字を縦に並べる
+  @include m.mq() {
+    flex-direction: column;
+    text-align: center;
+  }
+}

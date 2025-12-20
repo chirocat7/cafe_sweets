@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/*
+「枠組み（Layout）」が決まった後の、中身のデザインを細かく作り込みます。
+装飾: 背景色、枠線（border）、角丸（border-radius）、影（box-shadow）。
+テキスト: フォントの太さ、行間、ホバーした時の色の変化。
+アニメーション: マウスを乗せた時や、クリックした時の「動きのルール」。
+*/
+.c-btn {
+  display: inline-block;
+  padding: 1em 2em;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+@media (any-hover: hover) {
+  .c-btn:hover {
+    opacity: 0.8;
+  }
+}
+.c-btn--primary {
+  background-color: #ff0000;
+}
+.c-btn__text {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/*
+ページ全体の構成要素: header, main, footer, nav, sidebar などの外枠。
+コンテナ（Container）: コンテンツが広がりすぎないように幅を制限する中央寄せの設定。
+配置ルール: display: flex や grid を使った、大きなエリアの並び方。
+*/
+.l-container {
+  width: 100%;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.l-mv {
+  height: 60vh;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.l-mv__img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.p-mv-content {
+  text-align: center;
+}
+.p-mv-content__title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.p-mv-content__text {
+  margin-bottom: 30px;
+}
+
+.p-feature {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+@media screen and (max-width: 767px) {
+  .p-feature {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.l-header {
+  width: 100%;
+  padding: 20px;
+}
+@media screen and (max-width: 767px) {
+  .l-header {
+    padding: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */
