@@ -5,8 +5,8 @@
 テキスト: フォントの太さ、行間、ホバーした時の色の変化。
 アニメーション: マウスを乗せた時や、クリックした時の「動きのルール」。
 */
-@use "config" as c;
-@use "mixin" as m;
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .c-btn {
   display: inline-block;
@@ -23,9 +23,6 @@
     opacity: 0.8;
   }
 
-  &--primary {
-    background-color: c.$color-accent;
-  }
 
   &__text {
     font-weight: bold;

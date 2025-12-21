@@ -1,21 +1,14 @@
 //使い回し度 90%： 読み込み順序を固定します。
-// 1. 変数とMixin（一番最初）
-@use "config" as c;
-@use "mixin" as m;
 
-// 2. 基本パーツ
-@use "components" as comp;
+// 1.Foundation（土台：一番最初に読み込む）
+@use "foundation/reset";
+@use "foundation/base";
 
-// 3. 配置レイアウト
-@use "layout" as l;
+// 2. Layout（大きな枠組み）
+@use "layout/layout" as l;
 
-@use "project" as p;
+// 3. Component（使い回す小さな部品）
+@use "component/components" as comp;
 
-.l-header {
-  width: 100%;
-  padding: 20px;
-  
-  @include m.mq(sp) {
-    padding: 10px;
-  }
-}
+// 4. Project（ページ固有の具体的なコンテンツ）
+@use "project/project" as p;

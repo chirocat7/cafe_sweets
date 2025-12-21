@@ -4,9 +4,12 @@
 
 // --- Colors ---
 $color-main: #333;
-$color-accent: #ff0000;
-$color-bg: #fff;
-$color-text: #333;
+$color-base-bg: #ffd7f678;
+$color-accent-bg: #e993d7;
+$color-translucent-bg: rgba(0,0,0,0.5);
+$black-light: #333;
+$black: #000;
+$white: #fff;
 $color-border: #ccc;
 
 // --- Breakpoints ---
@@ -20,7 +23,8 @@ $breakpoints: (
 $inner-width: 1000px; // ★追記：l-containerなどで使用
 
 // --- Typography ---
-$font-base: "Noto Sans JP", sans-serif;
+$font-base: "M PLUS 2", sans-serif;
+$font-title: "Hachi Maru Pop", cursive;
 
 // --- Others ---
 $radius-base: 4px;

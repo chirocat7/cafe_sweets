@@ -6,13 +6,32 @@
 */
 
 // _layout.scss の一番上
-@use "config" as c;
-@use "mixin" as m;
+@use "../config/config" as c;
+@use "../config/mixin" as m;
+
+
+.l-header {
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: c.$color-accent-bg;
+    &__logo {
+    font-size: 32px;
+  }
+  @include m.mq(sp) {
+    padding: 10px;
+  }
+
+}
 
 .l-container {
   // mixinを使って定義を共通化
   @include m.inner(c.$inner-width);
 }
+
+
+
 
 .l-mv {
   height: 60vh;
