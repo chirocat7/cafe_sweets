@@ -59,8 +59,8 @@ header .Heading {
   gap: 10px;
 }
 .Social a {
-  width: 30px; 
-  height: 30px; 
+  width: 30px;
+  height: 30px;
 }
 /* img要素自体はa要素の中で幅100%になるようにする */
 .Social a img {

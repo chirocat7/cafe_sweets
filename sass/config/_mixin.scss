@@ -1,11 +1,14 @@
 //使い回し度 100%： どのプロジェクトでもそのままコピーして使います。
 // メディアクエリ（レスポンシブ）を簡単に書く
-@use "../config/config" as c; // ブレイクポイント等の変数を読み込む場合
+@use "sass:math";
+@use "sass:map";
+@use "../config/config"; // ブレイクポイント等の変数を読み込む場合
 
 // 1. メディアクエリ (Media Query)
 // 使い方: @include m.mq(sp) { ... }
-@mixin mq($bp: sp) {
-  @media #{map-get(c.$breakpoints, $bp)} {
+@mixin mq($bp) {
+  // 「map-get」を「map.get」に変更
+  @media #{map.get(config.$breakpoints, $bp)} {
     @content;
   }
 }
@@ -62,5 +65,6 @@
 // pxをremに自動変換する
 // 使い方: font-size: m.rem(20);
 @function rem($px) {
-  @return ($px / 16) * 1rem;
+  // 「/」を「math.div」に変更
+  @return math.div($px, 16) * 1rem;
 }

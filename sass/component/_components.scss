@@ -5,27 +5,62 @@
 テキスト: フォントの太さ、行間、ホバーした時の色の変化。
 アニメーション: マウスを乗せた時や、クリックした時の「動きのルール」。
 */
-@use "../config/config" as c;
-@use "../config/mixin" as m;
+@use "../config/config";
+@use "../config/mixin";
+
+#Fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.Fade-in-active {
+    opacity: 1 !important;
+}
+
+.slide-in.is-slide-left {
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-out;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.p-mv__content.slide_active {
+  transform: translateX(0);
+}
+
+.c-social {
+  &__link {
+    width: 30px;
+    height: 30px;
+    display: flex;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
 
 .c-btn {
   display: inline-block;
   padding: 1em 2em;
-  background-color: c.$color-main;
+  background-color: config.$color-main;
   color: #fff;
   text-decoration: none;
-  border-radius: c.$radius-base;
-  transition: c.$transition-base;
+  border-radius: config.$radius-base;
+  transition: config.$transition-base;
   cursor: pointer;
   border: none;
 
-  @include m.hover {
+  @include mixin.hover {
     opacity: 0.8;
   }
 
-
   &__text {
     font-weight: bold;
-    font-size: m.rem(16);
+    font-size: mixin.rem(16);
   }
+
 }

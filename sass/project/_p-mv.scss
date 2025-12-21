@@ -1,0 +1,39 @@
+@use "../config/config";
+@use "../config/mixin";
+
+.p-mv {
+  &__image-wrapper {
+    width: 100%;
+    height: 700px;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+  width: 40%;
+  height: 700px;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 105px;
+  transition: transform 0.8s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: config.$font-title;
+  }
+
+  &__text {
+    color: config.$white;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  &__name {
+    color: config.$white;
+    padding-top: 20px;
+  }
+}

@@ -1,3 +1,6 @@
+//console.log("JSが動いています！"); // 自分のためのメモ
+//alert("JSが読み込まれました！");   // 画面にポップアップを出す
+
 'use strict';
 /* ページロード時のフェードイン */
 const element = document.getElementById("Fade-in");
@@ -8,16 +11,16 @@ window.addEventListener("load", function() {
 });
 // jQueryでDOMツリーの構築完了を待って処理を実行するための記述
 $(() => {
-    /* メインビジュアルのスライドイン（ホバーアニメーション） */
-    const slideTarget = $('.Slidein.Slide_left');
-    // ホバー時にクラスを追加
-    slideTarget.on('mouseenter', function() {
-        $(this).addClass('Slide_active');
+    // 親要素である p-mv にホバーしたら
+    $('.p-mv').on('mouseenter', function() {
+        // その中の content をスライドさせる
+        $(this).find('.p-mv__content').addClass('slide_active');
     });
-    // ホバー解除時にクラスを削除
-    slideTarget.on('mouseleave', function() {
-        $(this).removeClass('Slide_active');
+
+    $('.p-mv').on('mouseleave', function() {
+        $(this).find('.p-mv__content').removeClass('slide_active');
     });
+});
 
     /* スクロール時の画面内表示（inview）チェック関数 */
     const checkInView = (elements) => {
@@ -41,14 +44,15 @@ $(() => {
             // scroll < elementTop + elementHeight: アニメーションを停止・再トリガーしない（要素が画面を通り過ぎて上に消えてしまうのを防ぐ）
             if (activationPoint > elementTop && scroll < elementTop + elementHeight) {
                 currentElement.addClass('Inview');
+                console.log('スクロールのアニメーション実行')
             }
         });
     }
 
-    const targets = $('#News, .Menu-item');
+    const targets = $('#News, .p-menu__item');
     // スクロール時と初回ロード時にinviewチェックを実行
     $(window).on('scroll', () => {
         checkInView(targets);
+        console.log('inviewチェック中')
     });
     checkInView(targets);
-});

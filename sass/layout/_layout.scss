@@ -10,20 +10,7 @@
 @use "../config/mixin" as m;
 
 
-.l-header {
-  width: 100%;
-  padding: 20px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: c.$color-accent-bg;
-    &__logo {
-    font-size: 32px;
-  }
-  @include m.mq(sp) {
-    padding: 10px;
-  }
 
-}
 
 .l-container {
   // mixinを使って定義を共通化
@@ -34,13 +21,9 @@
 
 
 .l-mv {
+  width: 100%;
   height: 60vh;
   background: #eee;
   @include m.flex-center;
   text-align: center;
-
-  &__img img {
-    max-width: 100%;
-    height: auto;
-  }
 }

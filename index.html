@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=M+PLUS+2:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="main.js" defer></script>
+    <script src="js/main.js" defer></script>
     <link rel="icon" href="img/shortcake-svgrepo-com.png">
   </head>
   <body>
@@ -17,7 +17,7 @@
         <a href="index.html" class="l-header__logo-link">Cafe Sweets</a>
       </h1>
       <nav class="l-header__nav">
-        <ul class="p-nav-list">
+        <ul class="p-nav-list l-flex">
            <li class="p-nav-list__item">
             <a href="index.html" class="p-nav-list__link">Home</a>
             </li>
@@ -29,38 +29,39 @@
             </li>
         </ul>
       </nav>
-      <div class="l-header__social p-social">
-        <a href="#" class="p-social__link">
-          <img src="img/instagram-1-svgrepo-com.svg" alt="p-social__icon">
+      <div class="l-header__social c-social">
+        <a href="#" class="c-social__link">
+          <img src="img/instagram-1-svgrepo-com.svg" alt="c-social__icon">
         </a>
-        <a href="#" alt="p-social__link">
-          <img src="img/youtube-svgrepo-com.svg" alt="p-social__icon">
+        <a href="#" class="c-social__link">
+          <img src="img/youtube-svgrepo-com.svg" alt="c-social__icon">
         </a>
-        <a href="#" alt="p-social__link">
-          <img src="img/facebook-svgrepo-com.svg" alt="p-social__icon">
+        <a href="#" class="c-social__link">
+          <img src="img/facebook-svgrepo-com.svg" alt="c-social__icon">
         </a>
       </div>
     </header>
 
-    <div class="l-mv">
-    	<div class="p-mv slide-in is-slide-left">
-      <div class="p-mv__content">
-        <p class="p-mv__text">
-          『cafe sweets』をご覧いただきありがとうございます<br>
-          パティシエが一つ一つ丁寧に作ったスイーツたちです<br>
-          素敵な時間をお過ごしください
+    <section class="p-mv">
+      <div class="p-mv__image-wrapper">
+        <img src="img/カフェ2.jpg" alt="メインビジュアル" class="p-mv__image">
+    	<div class="p-mv__content slide-in is-slide-left">
+        <p class="p-mv__text-group">
+          <p class="p-mv__text">『cafe sweets』をご覧いただきありがとうございます</p>
+          <p class="p-mv__text">パティシエが一つ一つ丁寧に作ったスイーツたちです</p>
+          <p class="p-mv__text">素敵な時間をお過ごしください</p>
         </p>
         <p class="p-mv__name">
           By chef.
         </p>
       </div>
-    </div>
-    </div>
+      </div>
+    </section>
   </div>
     <main>
       <section id="Menu" class="l-section p-menu">
-          <h2 class="p-menu__heading">MENU LIST</h2>
-          <div class="p-menu__list ">
+          <h2 class="p-menu__heading title-heading">MENU LIST</h2>
+          <div class="p-menu__list">
             <div class="p-menu__item">
               <div class="p-menu__image-wrapper">
                 <img class="p-menu__image" src="img/ショートケーキ.jpg" alt="ショートケーキ">
