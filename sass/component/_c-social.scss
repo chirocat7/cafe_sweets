@@ -5,8 +5,8 @@
 .c-social {
   &__link {
     @include mixin.flex-center;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     transition: opacity 0.3s;
     &:hover {
       opacity: 0.7;

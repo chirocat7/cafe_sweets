@@ -11,4 +11,14 @@
   padding: 20px;
   font-size: 9px;
   color: config.$white;
+
+  &__social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+       margin-bottom: 10px;
+    @include mixin.mq("pc") {
+     display: none;
+  }
+  }
 }

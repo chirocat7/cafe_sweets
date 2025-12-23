@@ -8,4 +8,8 @@
   margin-top: 100px;
   margin-bottom: 50px;
   @include mixin.inner;
+
+  @include mixin.mq("sp") {
+     margin-top: 50px;
+  }
 }

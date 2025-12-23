@@ -15,6 +15,12 @@
   &__list {
     gap: 40px 20px;
     @include mixin.grid-3;
+    @include mixin.mq("tab") {
+      grid-template-columns: repeat(2, 1fr); // タブレットは2列
+    }
+    @include mixin.mq("sp") {
+      grid-template-columns: repeat(1,1fr); // タブレットは2列
+    }
   }
 
 /* JavaScriptで追加されるクラス：画面内に入った時の状態 */

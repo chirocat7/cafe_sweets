@@ -6,10 +6,11 @@
 
 // 1. メディアクエリ (Media Query)
 // 使い方: @include m.mq(sp) { ... }
-@mixin mq($bp) {
-  // 「map-get」を「map.get」に変更
-  @media #{map.get(config.$breakpoints, $bp)} {
-    @content;
+
+@mixin mq($breakpoint) {
+  // $breakpoints マップから指定した名前（tabなど）の条件を取得
+  @media #{map.get(config.$breakpoints, $breakpoint)} {
+    @content; // ここに書いた中身がメディアクエリの中に入る
   }
 }
 

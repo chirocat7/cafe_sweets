@@ -18,14 +18,24 @@
   padding-top: 30px;
   font-family: config.$font-title;
   font-size: 24px;
+  @include mixin.mq("sp") {
+    width: 50%;
+  }
+
 }
 
 .c-container {
   margin-top: 80px;
+  @include mixin.mq("sp") {
+  margin-top: 40px;
+  }
 }
 
 .c-order2 {
   order: 2;
+  @include mixin.mq("sp") {
+    order: initial;
+  }
 }
 
 .c-btn {

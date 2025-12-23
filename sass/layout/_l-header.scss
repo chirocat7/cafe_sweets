@@ -12,12 +12,18 @@
   font-family: config.$font-title;
   position: relative;
 
-  &__nav {
-    padding: 20px;
+    @include mixin.mq("sp") {
+      padding: 10px;
   }
 
-  @include mixin.mq(sp) {
-    padding: 10px;
+  &__nav {
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include mixin.mq("sp") {
+      padding: 10px;
+    }
   }
 
   &__logo {
@@ -32,8 +38,17 @@
   right: 30px;
   display: flex;
   gap: 20px;
+  @include mixin.mq("tab") {
+    flex-direction: column;
+    top: 15px;
+    gap: 5px;
+    right: 20px;
   }
-
+  @include mixin.mq("sp") {
+      display: none;
+    
+  }
+  }
 }
 
 .l-flex {
