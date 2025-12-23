@@ -11,6 +11,9 @@
 
 // 3. Component（使い回す小さな部品）
 @use "component/components";
+@use "component/c-animation";
+@use "component/c-social";
+
 
 // 4. Project（ページ固有の具体的なコンテンツ）
 @use "project/p-button";
@@ -18,3 +21,6 @@
 @use "project/p-nav-list";
 @use "project/p-mv";
 @use "project/p-menu";
+@use "project/p-news";
+@use "project/p-access";
+

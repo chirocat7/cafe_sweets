@@ -375,6 +375,14 @@ th {
   font-weight: bold;
 }
 
+body {
+  font-family: "M PLUS 2", sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
 .l-header {
   width: 100%;
   padding: 20px;
@@ -383,7 +391,6 @@ th {
   background-color: #e993d7;
   font-family: "Hachi Maru Pop", cursive;
   position: relative;
-  padding: 20px;
 }
 .l-header__nav {
   padding: 20px;
@@ -404,7 +411,7 @@ th {
   top: 50px;
   right: 30px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .l-flex {
@@ -413,42 +420,52 @@ th {
   align-items: center;
 }
 
+.l-section {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.l-footer {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  background-color: #e993d7;
+  font-family: "Hachi Maru Pop", cursive;
+  padding: 20px;
+  font-size: 9px;
+  color: #fff;
+}
+
 /*
 「枠組み（Layout）」が決まった後の、中身のデザインを細かく作り込みます。
 装飾: 背景色、枠線（border）、角丸（border-radius）、影（box-shadow）。
 テキスト: フォントの太さ、行間、ホバーした時の色の変化。
 アニメーション: マウスを乗せた時や、クリックした時の「動きのルール」。
 */
-#Fade-in {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.c-title-heading {
+  border-bottom: 8px solid #e7e7e7;
+  text-align: center;
+  line-height: 1.2;
+  color: black;
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 30px;
+  font-family: "Hachi Maru Pop", cursive;
+  font-size: 24px;
 }
 
-.Fade-in-active {
-  opacity: 1 !important;
+.c-container {
+  margin-top: 80px;
 }
 
-.slide-in.is-slide-left {
-  transform: translateX(-100%);
-  transition: transform 0.8s ease-out;
-  pointer-events: auto;
-  z-index: 10;
-}
-
-.p-mv__content.slide_active {
-  transform: translateX(0);
-}
-
-.c-social__link {
-  width: 30px;
-  height: 30px;
-  display: flex;
-}
-.c-social__icon {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.c-order2 {
+  order: 2;
 }
 
 .c-btn {
@@ -470,6 +487,74 @@ th {
 .c-btn__text {
   font-weight: bold;
   font-size: 1rem;
+}
+
+.c-fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.c-fade-in.Inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+.c-fade-in-active {
+  opacity: 1 !important;
+}
+
+.c-slide-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-out;
+  z-index: 10;
+  /* 使い回せる「アクティブ」クラス */
+}
+.c-slide-left.is-active {
+  transform: translateX(0);
+}
+
+/* 共通のアニメーション部品 */
+.c-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* JSで画面内に入った時に付与されるクラス */
+}
+.c-fade-up.Inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.c-social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+.c-social__link:hover {
+  opacity: 0.7;
+}
+.c-social__icon {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.p-label-new {
+  background-color: #acabab;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  text-align: center;
+  min-width: 40px;
+  min-height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .p-nav-list {
@@ -516,49 +601,121 @@ th {
   padding-top: 20px;
 }
 
-.p-menu__heading {
-  border-bottom: 8px solid #e7e7e7;
-  text-align: center;
-  line-height: 0.6;
-  color: black;
-  width: 20%;
-  margin: 0 auto;
-  padding-top: 30px;
+.p-menu {
+  /* JavaScriptで追加されるクラス：画面内に入った時の状態 */
 }
-
+.p-menu__title {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  align-items: center;
+  border-bottom: 4px solid #e7e7e7;
+}
 .p-menu__list {
-  padding: 50px 0;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
   flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
-
-/* メニューアイテムのスクロールアニメーション初期状態 */
-.p-menu__item {
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  gap: 20px;
-  display: flex; /* 画像とテキストを横並びにする */
-  width: 100%;
-  flex-wrap: wrap; /* 小さい画面で折り返すために残す */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.p-menu__item.Inview {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* JavaScriptで追加されるクラス：画面内に入った時の状態 */
 .p-menu__body {
-  padding-left: 30px;
-  padding-right: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "M PLUS 2", sans-serif;
 }
-
+.p-menu__image-wrapper {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
 .p-menu__image {
   width: 100%;
   height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.p-news__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+.p-news__introduction {
+  margin-top: 15px;
+}
+.p-news__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.p-news__item {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+.p-news__bg {
+  width: 50%;
+  background-image: url(../../img/news_bg.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.p-news__body {
+  text-align: center;
+  padding: 20px;
+  gap: 8px;
+}
+.p-news__image {
+  width: 500px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.p-access__info {
+  display: flex;
+  gap: 20px;
+}
+.p-access__list {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  background-color: #e7ffce;
+  border-radius: 10px;
+  padding: 20px;
+  line-height: 2;
+}
+.p-access__item {
+  display: flex;
+  flex-wrap: wrap;
+}
+.p-access__label {
+  font-weight: 600;
+}
+.p-access-map {
+  width: 40%;
+  align-items: center;
+  display: flex;
+}
+.p-access__image {
+  width: 100%;
+}
+
+.p-reservation {
+  border: 1px solid #73bf6d;
+  background-color: #5d9a59;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  width: 400px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

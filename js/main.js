@@ -3,22 +3,22 @@
 
 'use strict';
 /* ページロード時のフェードイン */
-const element = document.getElementById("Fade-in");
+const element = document.querySelector(".c-fade-in");
 
 window.addEventListener("load", function() {
   // ページロード完了後、CSSクラスを追加してフェードインを有効化
-  element.classList.add("Fade-in-active");
+  element.classList.add("c-fade-in-active");
 });
 // jQueryでDOMツリーの構築完了を待って処理を実行するための記述
 $(() => {
-    // 親要素である p-mv にホバーしたら
+    // slide-in機能を持つ要素（の親）を監視
     $('.p-mv').on('mouseenter', function() {
-        // その中の content をスライドさせる
-        $(this).find('.p-mv__content').addClass('slide_active');
+        // マウスが乗った要素の中にある「c-slide-left」を探してクラスを付ける
+        $(this).find('.c-slide-left').addClass('is-active');
     });
 
     $('.p-mv').on('mouseleave', function() {
-        $(this).find('.p-mv__content').removeClass('slide_active');
+        $(this).find('.c-slide-left').removeClass('is-active');
     });
 });
 

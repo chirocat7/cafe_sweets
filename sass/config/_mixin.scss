@@ -21,11 +21,17 @@
   align-items: center;
 }
 
+@mixin grid-3 {
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 // 3. コンテンツ幅の固定 (Inner)
 // 使い方: @include m.inner(1200px);
-@mixin inner($width: 1000px, $padding: 20px) {
+@mixin inner($width: config.$inner-width, $padding: 20px) {
   width: 100%;
-  max-width: $width;
+  max-width: config.$inner-width;
   margin-right: auto;
   margin-left: auto;
   padding-right: $padding;

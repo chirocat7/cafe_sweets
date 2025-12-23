@@ -1,0 +1,21 @@
+@use "../config/config";
+@use "../config/mixin";
+
+
+.c-social {
+  &__link {
+    @include mixin.flex-center;
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.7;
+    }
+
+  }
+  &__icon {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

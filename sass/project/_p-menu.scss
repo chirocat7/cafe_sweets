@@ -1,44 +1,38 @@
 @use "../config/mixin";
 @use "../config/config";
 
-.p-menu__heading{
-  border-bottom: 8px solid #e7e7e7;
-  text-align: center;
-  line-height: 0.6;
-  color: black;
-  width: 20%;
-  margin: 0 auto;
-  padding-top: 30px;
-}
-.p-menu__list {
-  padding: 50px 0;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  flex-wrap: wrap;
-}
-/* メニューアイテムのスクロールアニメーション初期状態 */
-.p-menu__item {
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  gap: 20px;
-  display: flex; /* 画像とテキストを横並びにする */
-  width: 100%;
-  flex-wrap: wrap; /* 小さい画面で折り返すために残す */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.p-menu__item.Inview {
-  opacity: 1;
-  transform: translateY(0);
-}
+.p-menu {
+
+  &__title {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+    border-bottom: 4px solid #e7e7e7;
+  }
+
+  &__list {
+    gap: 40px 20px;
+    @include mixin.grid-3;
+  }
+
 /* JavaScriptで追加されるクラス：画面内に入った時の状態 */
-.p-menu__body {
-  padding-left: 30px;
-  padding-right: 10px;
-}
-.p-menu__image {
-  width: 100%;
-  height: 300px;
+  &__body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: config.$font-base;
+  }
+  &__image-wrapper {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
 }

@@ -1,0 +1,44 @@
+@use "../config/config";
+@use "../config/mixin";
+
+
+.c-fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  &.Inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &-active {
+    opacity: 1 !important;
+  }
+}
+
+
+.c-slide-left {
+  position: absolute; // 重ねるために必要
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-out;
+  z-index: 10;
+
+  /* 使い回せる「アクティブ」クラス */
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+
+/* 共通のアニメーション部品 */
+.c-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  /* JSで画面内に入った時に付与されるクラス */
+  &.Inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

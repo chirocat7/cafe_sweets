@@ -8,40 +8,25 @@
 @use "../config/config";
 @use "../config/mixin";
 
-#Fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.Fade-in-active {
-    opacity: 1 !important;
-}
-
-.slide-in.is-slide-left {
-  transform: translateX(-100%);
-  transition: transform 0.8s ease-out;
-  pointer-events: auto;
-  z-index: 10;
+.c-title-heading {
+  border-bottom: 8px solid #e7e7e7;
+  text-align: center;
+  line-height: 1.2;
+  color: black;
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 30px;
+  font-family: config.$font-title;
+  font-size: 24px;
 }
 
-.p-mv__content.slide_active {
-  transform: translateX(0);
+.c-container {
+  margin-top: 80px;
 }
 
-.c-social {
-  &__link {
-    width: 30px;
-    height: 30px;
-    display: flex;
-  }
-
-  &__icon {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.c-order2 {
+  order: 2;
 }
-
-
 
 .c-btn {
   display: inline-block;
