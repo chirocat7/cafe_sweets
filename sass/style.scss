@@ -4,20 +4,17 @@
 @use "foundation/reset";
 @use "foundation/base";
 
-// 2. Layout（大きな枠組み）
-@use "layout/l-header";
-@use "layout/l-main";
-@use "layout/l-footer";
-
-// 3. Component（使い回す小さな部品）
+// 2. Component（使い回す小さな部品）
 @use "component/components";
 @use "component/c-animation";
 @use "component/c-social";
 
+// 3. Layout（大きな枠組み）
+@use "layout/l-header";
+@use "layout/l-main";
+@use "layout/l-footer";
 
 // 4. Project（ページ固有の具体的なコンテンツ）
-@use "project/p-button";
-@use "project/p-cards";
 @use "project/p-nav-list";
 @use "project/p-mv";
 @use "project/p-menu";

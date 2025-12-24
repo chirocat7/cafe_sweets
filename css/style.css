@@ -377,106 +377,12 @@ th {
 
 body {
   font-family: "M PLUS 2", sans-serif;
-  font-size: 16px;
   color: #333;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
-
-.l-header {
-  width: 100%;
-  padding: 20px;
-  margin: auto;
-  text-align: center;
-  background-color: #e993d7;
-  font-family: "Hachi Maru Pop", cursive;
-  position: relative;
-}
-@media screen and (max-width: 599px) {
-  .l-header {
-    padding: 10px;
-  }
-}
-.l-header__nav {
-  padding: 20px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-@media screen and (max-width: 599px) {
-  .l-header__nav {
-    padding: 10px;
-  }
-}
-.l-header__logo {
-  color: #fff;
-  font-size: 32px;
-  font-weight: bold;
-  font-style: normal;
-}
-.l-header__social {
-  position: absolute;
-  top: 50px;
-  right: 30px;
-  display: flex;
-  gap: 20px;
-}
-@media screen and (max-width: 1024px) {
-  .l-header__social {
-    flex-direction: column;
-    top: 15px;
-    gap: 5px;
-    right: 20px;
-  }
-}
-@media screen and (max-width: 599px) {
-  .l-header__social {
-    display: none;
-  }
-}
-
-.l-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.l-section {
-  margin-top: 100px;
-  margin-bottom: 50px;
-  width: 100%;
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-@media screen and (max-width: 599px) {
-  .l-section {
-    margin-top: 50px;
-  }
-}
-
-.l-footer {
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  background-color: #e993d7;
-  font-family: "Hachi Maru Pop", cursive;
-  padding: 20px;
-  font-size: 9px;
-  color: #fff;
-}
-.l-footer__social {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-@media screen and (min-width: 601px) {
-  .l-footer__social {
-    display: none;
-  }
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  font-size: 16px;
 }
 
 /*
@@ -485,30 +391,38 @@ body {
 テキスト: フォントの太さ、行間、ホバーした時の色の変化。
 アニメーション: マウスを乗せた時や、クリックした時の「動きのルール」。
 */
-.c-title-heading {
-  border-bottom: 8px solid #e7e7e7;
-  text-align: center;
-  line-height: 1.2;
-  color: black;
-  width: 30%;
-  margin: 0 auto;
-  padding-top: 30px;
+.c-title-heading, .c-title {
   font-family: "Hachi Maru Pop", cursive;
-  font-size: 24px;
-}
-@media screen and (max-width: 599px) {
-  .c-title-heading {
-    width: 50%;
-  }
+  line-height: 1.2;
+  color: #000;
 }
 
-.c-container {
-  margin-top: 80px;
+.c-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 4px solid #ccc;
+  padding-bottom: 4px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "M PLUS 2", sans-serif;
 }
-@media screen and (max-width: 599px) {
-  .c-container {
-    margin-top: 40px;
-  }
+.c-title--center {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.c-title-heading {
+  margin-inline: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 8px solid #ccc;
+  padding-bottom: 8px;
+  text-align: center;
+  font-size: 24px;
 }
 
 .c-order2 {
@@ -578,43 +492,146 @@ body {
   transform: translateY(0);
 }
 
+.c-social {
+  display: flex;
+  gap: 15px;
+}
 .c-social__link {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30px;
   height: 30px;
-  transition: opacity 0.3s;
+  transition: 0.3s ease;
 }
-.c-social__link:hover {
-  opacity: 0.7;
+@media (any-hover: hover) {
+  .c-social__link:hover {
+    opacity: 0.7;
+  }
 }
 .c-social__icon {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-.p-label-new {
-  background-color: #acabab;
-  color: #fff;
-  font-size: 12px;
-  border-radius: 3px;
+.l-header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-inline: 20px;
   text-align: center;
-  min-width: 40px;
-  min-height: 25px;
+  background-color: #e993d7;
+  font-family: "Hachi Maru Pop", cursive;
+}
+.l-header__logo {
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+}
+.l-header__nav {
+  padding: 10px 10px 20px;
+}
+@media screen and (max-width: 599px) {
+  .l-header__nav {
+    padding: 10px;
+  }
+}
+.l-header__social.c-social {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 1024px) {
+  .l-header__social.c-social {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    right: 20px;
+    gap: 5px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .l-header__social.c-social {
+    display: none;
+  }
+}
+@media screen and (max-width: 599px) {
+  .l-header {
+    padding: 10px;
+  }
+}
+
+.l-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.p-nav-list {
+.l-section {
+  padding-top: 50px;
+}
+@media screen and (max-width: 599px) {
+  .l-section {
+    padding-top: 40px;
+  }
+}
+.l-section.is-last-section {
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 599px) {
+  .l-section.is-last-section {
+    padding-bottom: 30px;
+  }
+}
+
+.l-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.l-footer {
+  width: 100%;
+  text-align: center;
+  background-color: #e993d7;
+  font-family: "Hachi Maru Pop", cursive;
+  color: #fff;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.l-footer__social.c-social {
   display: flex;
   justify-content: center;
-  font-size: 20px;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (min-width: 600px) {
+  .l-footer__social.c-social {
+    display: none;
+  }
+}
+.l-footer__copyright {
+  font-size: 0.8em;
+}
+
+.p-nav-list {
   gap: 60px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
 .p-nav-list__item {
   color: #fff;
@@ -643,15 +660,16 @@ body {
      object-fit: cover;
 }
 .p-mv__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   width: 40%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 105px 60px;
-  transition: transform 0.8s ease-out;
-  position: absolute;
-  top: 0;
-  left: 0;
   font-family: "Hachi Maru Pop", cursive;
+  transition: transform 0.8s ease-out;
 }
 @media screen and (max-width: 1024px) {
   .p-mv__content {
@@ -669,7 +687,6 @@ body {
 .p-mv__text {
   color: #fff;
   font-size: 18px;
-  line-height: 1.5;
 }
 @media screen and (max-width: 599px) {
   .p-mv__text {
@@ -681,20 +698,11 @@ body {
   padding-top: 20px;
 }
 
-.p-menu {
-  /* JavaScriptで追加されるクラス：画面内に入った時の状態 */
-}
-.p-menu__title {
-  display: flex;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 500;
-  align-items: center;
-  border-bottom: 4px solid #e7e7e7;
+.p-menu__heading {
+  margin-bottom: 50px;
 }
 .p-menu__list {
   gap: 40px 20px;
-  flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -705,15 +713,23 @@ body {
 }
 @media screen and (max-width: 599px) {
   .p-menu__list {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
 }
+.p-menu__price {
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+  font-weight: bold;
+}
 .p-menu__body {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-inline: 10px;
+  font-family: "M PLUS 2", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-family: "M PLUS 2", sans-serif;
 }
 .p-menu__image-wrapper {
   width: 100%;
@@ -727,32 +743,55 @@ body {
      object-fit: cover;
 }
 
+.p-label-new {
+  background-color: #acabab;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: center;
+  min-width: 40px;
+  min-height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.p-news {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.p-news__heading {
+  margin-bottom: 50px;
+}
 .p-news__title {
   font-size: 20px;
   font-weight: 500;
 }
-.p-news__introduction {
+* + .p-news__introduction {
   margin-top: 15px;
 }
 .p-news__list {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
 }
 .p-news__item {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 @media screen and (max-width: 1024px) {
   .p-news__item {
-    gap: 30px;
+    gap: 15px;
   }
 }
 @media screen and (max-width: 599px) {
   .p-news__item {
     flex-direction: column;
+    gap: 5px;
   }
 }
 .p-news__bg {
@@ -761,21 +800,24 @@ body {
   background-image: url(../../img/news_back.jpg);
   background-position: center;
   background-size: cover;
-  display: flex;
   flex-direction: column;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 @media screen and (max-width: 599px) {
   .p-news__bg {
     width: 100%;
     height: 400px;
-    background-size: cover;
   }
 }
 .p-news__body {
   text-align: center;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 .p-news__image {
@@ -797,6 +839,12 @@ body {
   }
 }
 
+.p-access {
+  padding-bottom: 80px;
+}
+.p-access__heading {
+  margin-bottom: 50px;
+}
 .p-access__info {
   display: flex;
   gap: 20px;
@@ -810,10 +858,12 @@ body {
   width: 60%;
   display: flex;
   flex-direction: column;
+  gap: 12px;
   background-color: #e7ffce;
   border-radius: 10px;
-  padding: 20px;
-  line-height: 2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-inline: 20px;
 }
 @media screen and (max-width: 599px) {
   .p-access__list {
@@ -829,8 +879,8 @@ body {
 }
 .p-access-map {
   width: 40%;
-  align-items: center;
   display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 599px) {
   .p-access-map {
@@ -842,19 +892,26 @@ body {
 }
 
 .p-reservation {
-  border: 1px solid #73bf6d;
   background-color: #5d9a59;
+  border: 1px solid #73bf6d;
   border-radius: 10px;
-  margin: 0 auto;
-  text-align: center;
-  min-width: 300px;
-  margin-top: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 15px 10px;
   color: #fff;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
+}
+.p-reservation__title {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.p-reservation__tel {
+  font-size: 1.2em;
+  font-weight: bold;
 }
 @media screen and (max-width: 599px) {
   .p-reservation {
-    min-width: 250px;
+    max-width: 250px;
   }
 }/*# sourceMappingURL=style.css.map */

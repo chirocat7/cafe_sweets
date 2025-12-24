@@ -1,10 +1,13 @@
-@use "../config/config";
-@use "../config/mixin";
+//bodyの中の基本設定
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 body {
-  font-family: config.$font-base;
-  font-size: 16px;
-  color: config.$black-light;
+  font-family: c.$font-base;
+  color: c.$black-light;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  @include m.fz("m");
 }

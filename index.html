@@ -33,14 +33,14 @@
             </li>
         </ul>
       </nav>
-      <div class="l-header__social c-social">
+      <div class="l-header__social c-social" aria-label="Instagram">
         <a href="#" class="c-social__link">
           <img src="img/instagram-1-svgrepo-com.svg" alt="c-social__icon">
         </a>
-        <a href="#" class="c-social__link">
+        <a href="#" class="c-social__link" aria-label="YouTube">
           <img src="img/youtube-svgrepo-com.svg" alt="c-social__icon">
         </a>
-        <a href="#" class="c-social__link">
+        <a href="#" class="c-social__link" aria-label="Facebook">
           <img src="img/facebook-svgrepo-com.svg" alt="c-social__icon">
         </a>
       </div>
@@ -64,181 +64,187 @@
   </div>
     <main>
       <section id="Menu" class="l-section p-menu">
+        <div class="l-container">
           <h2 class="p-menu__heading c-title-heading">MENU LIST</h2>
-          <div class="p-menu__list c-container">
-            <div class="p-menu__item c-fade-up">
-              <div class="p-menu__image-wrapper">
-                <img class="p-menu__image" src="img/ショートケーキ.jpg" alt="ショートケーキ">
-              </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 ショートケーキ<br>
-                 <span class="p-menu__price">￥500</span>
-               </h3>
-               <p class="p-menu__introduction">当店一押しのショートケーキです。いちごの甘さが癖になる商品</p>
-             </div>
-           </div>
-           <div class="p-menu__item c-fade-up">
-            <div class="p-menu__image-wrapper">
-              <img class="p-menu__image" src="img/チーズケーキ.jpg" alt="チーズケーキ＆バニラ">
-            </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 チーズケーキ＆バニラアイス<br>
-                 <span class="p-menu__price">￥800</span>
-               </h3>
-             <p class="p-menu__introduction">濃厚なチーズとバニラアイスの相性が抜群なおいしさ</p>
-           </div>
-           </div>
-           <div class="p-menu__item c-fade-up">
-            <div class="p-menu__image-wrapper">
-              <img class="p-menu__image" src="img/イチゴのホールケーキ.jpg" alt="イチゴのホールケーキ">
-            </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 イチゴのホールケーキ<br>
-                 <span class="p-menu__price">￥1,500</span>
-               </h3>
-             <p class="p-menu__introduction">イチゴを贅沢に使用したケーキ、イチゴのホイップが甘くて最高</p>
-           </div>
-           </div>
-           <div class="p-menu__item c-fade-up">
-            <div class="p-menu__image-wrapper">
-              <img class="p-menu__image" src="img/パンケーキ.jpg" alt="パンケーキ">
-            </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 パンケーキ<br>
-                 <span class="p-menu__price">￥800</span>
-               </h3>
-             <p class="p-menu__introduction">シロップと7層のパンケーキが甘くてホッとする商品</p>
-           </div>
-           </div>
-           <div class="p-menu__item c-fade-up">
-            <div class="p-menu__image-wrapper">
-              <img class="p-menu__image" src="img/マカロン.jpg" alt="マカロン">
-            </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 マカロン<br>
-                 <span class="p-menu__price">￥400</span>
-               </h3>
-             <p class="p-menu__introduction">ふんわりサクサクのマカロンです。お味はチョコ、いちご、バニラ、ピスタチオ</p>
-           </div>
-           </div>
-           <div class="p-menu__item c-fade-up">
-            <div class="p-menu__image-wrapper">
-              <img class="p-menu__image" src="img/マロンケーキ.jpg" alt="マロンケーキ">
-            </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 マロンケーキ<br>
-                 <span class="p-menu__price">￥550</span>
-               </h3>
-             <p class="p-menu__introduction">マロンの食感と甘さが楽しめる商品です。マロン好きにはたまりません</p>
-           </div>
-           </div>
-             <div class="p-menu__item c-fade-up">
-               <div class="p-menu__image-wrapper">
-                 <img class="p-menu__image" src="img/ドーナツ.jpg" alt="ドーナツ">
-               </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 チョコドーナツ<br>
-                 <span class="p-menu__price">￥200</span>
-               </h3>
-                 <p class="p-menu__introduction">チョコをビターに仕上げた大人向けの商品、カラースプレーの甘さでちょうどいい</p>
+            <div class="p-menu__list c-container">
+              <div class="p-menu__item c-fade-up">
+                <div class="p-menu__image-wrapper">
+                  <img class="p-menu__image" src="img/ショートケーキ.jpg" alt="ショートケーキ">
+                </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new ">New</span>
+                   ショートケーキ<br>
+                   <span class="p-menu__price">￥500</span>
+                 </h3>
+                 <p class="p-menu__introduction">当店一押しのショートケーキです。いちごの甘さが癖になる商品</p>
                </div>
              </div>
              <div class="p-menu__item c-fade-up">
               <div class="p-menu__image-wrapper">
-                <img class="p-menu__image" src="img/プリン.jpg" alt="プリン">
+                <img class="p-menu__image" src="img/チーズケーキ.jpg" alt="チーズケーキ＆バニラ">
               </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 プリン<br>
-                 <span class="p-menu__price">￥300</span>
-               </h3>
-                <p class="p-menu__introduction">なめらかなくちどけのカスタードプリンです。しつこくない甘さでカラメルがマッチしてます</p>
-              </div>
-            </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   チーズケーキ＆バニラアイス<br>
+                   <span class="p-menu__price">￥800</span>
+                 </h3>
+               <p class="p-menu__introduction">濃厚なチーズとバニラアイスの相性が抜群なおいしさ</p>
+             </div>
+             </div>
              <div class="p-menu__item c-fade-up">
               <div class="p-menu__image-wrapper">
-                <img class="p-menu__image" src="img/ロールケーキ.jpg" alt="ロールケーキ">
+                <img class="p-menu__image" src="img/イチゴのホールケーキ.jpg" alt="イチゴのホールケーキ">
               </div>
-             <div class="p-menu__body">
-               <h3 class="p-menu__title">
-                 <span class="p-label-new">New</span>
-                 ロールケーキ<br>
-                 <span class="p-menu__price">￥400</span>
-               </h3>
-                <p class="p-menu__introduction">ふわふわとした食感で、生クリームが甘すぎない昔ながらのロールケーキです</p>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   イチゴのホールケーキ<br>
+                   <span class="p-menu__price">￥1,500</span>
+                 </h3>
+               <p class="p-menu__introduction">イチゴを贅沢に使用したケーキ、イチゴのホイップが甘くて最高</p>
+             </div>
+             </div>
+             <div class="p-menu__item c-fade-up">
+              <div class="p-menu__image-wrapper">
+                <img class="p-menu__image" src="img/パンケーキ.jpg" alt="パンケーキ">
               </div>
-            </div>
-           </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   パンケーキ<br>
+                   <span class="p-menu__price">￥800</span>
+                 </h3>
+               <p class="p-menu__introduction">シロップと7層のパンケーキが甘くてホッとする商品</p>
+             </div>
+             </div>
+             <div class="p-menu__item c-fade-up">
+              <div class="p-menu__image-wrapper">
+                <img class="p-menu__image" src="img/マカロン.jpg" alt="マカロン">
+              </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   マカロン<br>
+                   <span class="p-menu__price">￥400</span>
+                 </h3>
+               <p class="p-menu__introduction">ふんわりサクサクのマカロンです。お味はチョコ、いちご、バニラ、ピスタチオ</p>
+             </div>
+             </div>
+             <div class="p-menu__item c-fade-up">
+              <div class="p-menu__image-wrapper">
+                <img class="p-menu__image" src="img/マロンケーキ.jpg" alt="マロンケーキ">
+              </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   マロンケーキ<br>
+                   <span class="p-menu__price">￥550</span>
+                 </h3>
+               <p class="p-menu__introduction">マロンの食感と甘さが楽しめる商品です。マロン好きにはたまりません</p>
+             </div>
+             </div>
+               <div class="p-menu__item c-fade-up">
+                 <div class="p-menu__image-wrapper">
+                   <img class="p-menu__image" src="img/ドーナツ.jpg" alt="ドーナツ">
+                 </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   チョコドーナツ<br>
+                   <span class="p-menu__price">￥200</span>
+                 </h3>
+                   <p class="p-menu__introduction">チョコをビターに仕上げた大人向けの商品、カラースプレーの甘さでちょうどいい</p>
+                 </div>
+               </div>
+               <div class="p-menu__item c-fade-up">
+                <div class="p-menu__image-wrapper">
+                  <img class="p-menu__image" src="img/プリン.jpg" alt="プリン">
+                </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   プリン<br>
+                   <span class="p-menu__price">￥300</span>
+                 </h3>
+                  <p class="p-menu__introduction">なめらかなくちどけのカスタードプリンです。しつこくない甘さでカラメルがマッチしてます</p>
+                </div>
+              </div>
+               <div class="p-menu__item c-fade-up">
+                <div class="p-menu__image-wrapper">
+                  <img class="p-menu__image" src="img/ロールケーキ.jpg" alt="ロールケーキ">
+                </div>
+               <div class="p-menu__body">
+                 <h3 class="p-menu__title c-title">
+                   <span class="p-label-new">New</span>
+                   ロールケーキ<br>
+                   <span class="p-menu__price">￥400</span>
+                 </h3>
+                  <p class="p-menu__introduction">ふわふわとした食感で、生クリームが甘すぎない昔ながらのロールケーキです</p>
+                </div>
+              </div>
+             </div>
+        </div>
         </section>
         <section id="News" class="l-section">
-          <h2 class="p-news-heading c-title-heading">NEWS</h2>
-          <div class="p-news__list c-container">
-            <div class="p-news__item">
-              <div class="p-news__bg">
-                <div class="p-news__body c-order1">
-                  <h3 class="p-news__title">アイスが販売開始!?</h3>
-                  <p class="p-news__name">チョコアイスとバニラアイス</p>
-                  <p class="p-news__introduction">おいしさにこだわったアイスの販売が開始されました。食べていただいたお客様からも好評で何度も足を運んでいただいています！ぜひご来店ください</p>
+          <div class="l-container">
+            <h2 class="p-news__heading c-title-heading">NEWS</h2>
+            <div class="p-news__list c-container">
+              <div class="p-news__item">
+                <div class="p-news__bg">
+                  <div class="p-news__body">
+                    <h3 class="p-news__title c-title c-title--center">アイスが販売開始!?</h3>
+                    <p class="p-news__name">チョコアイスとバニラアイス</p>
+                    <p class="p-news__introduction">おいしさにこだわったアイスの販売が開始されました。食べていただいたお客様からも好評で何度も足を運んでいただいています！ぜひご来店ください</p>
+                  </div>
                 </div>
-              </div>
-                <img class="p-news__image" src="img/アイス.jpg" alt="新しいメニューのアイスの画像">
-              </div>
-            <div class="p-news__item">
-              <div class="p-news__bg  c-order2">
-                <div class="p-news__body">
-                  <h3 class="p-news__title">軽食始めました</h3>
-                  <p class="p-news__name">コーヒーとサンドイッチのセット</p>
-                  <p class="p-news__introduction">スイーツだけでなく軽食も楽しめるようにセットの販売を開始いたしました。モーニングやランチ時などぜひご利用ください</p>
+                  <img class="p-news__image" src="img/アイス.jpg" alt="新しいメニューのアイスの画像">
                 </div>
+              <div class="p-news__item">
+                <div class="p-news__bg  c-order2">
+                  <div class="p-news__body">
+                    <h3 class="p-news__title c-title c-title--center">軽食始めました</h3>
+                    <p class="p-news__name">コーヒーとサンドイッチのセット</p>
+                    <p class="p-news__introduction">スイーツだけでなく軽食も楽しめるようにセットの販売を開始いたしました。モーニングやランチ時などぜひご利用ください</p>
+                  </div>
+                </div>
+                 <img class="p-news__image" src="img/コーヒーとサンドイッチ.jpg" alt="新しいメニューのコーヒーセット画像">
               </div>
-               <img class="p-news__image" src="img/コーヒーとサンドイッチ.jpg" alt="新しいメニューのコーヒーセット画像">
             </div>
           </div>
         </section>
-        <section id="Access" class="l-section">
-          <h2 class="access-heading c-title-heading">ACCESS</h2>
-            <div class="p-access__info c-container">
-             <div class="p-access__list">
-               <div class="p-access__item">
-                 <p class="p-access__label">住所：</p>
-                 <p class="p-access__text">東京都xxxxxxxxx</p>
+        <section id="Access" class="l-section is-last-section">
+          <div class="l-container">
+            <h2 class="p-access__heading c-title-heading">ACCESS</h2>
+              <div class="p-access__info c-container">
+               <div class="p-access__list">
+                 <div class="p-access__item">
+                   <p class="p-access__label">住所：</p>
+                   <p class="p-access__text">東京都xxxxxxxxx</p>
+                 </div>
+                 <div class="p-access__item">
+                   <p class="p-access__label">営業時間：</p>
+                   <p class="p-access__text">11：00〜24：00（LO. 23:00）</p>
+                 </div>
+                 <div class="p-access__item">
+                   <p class="p-access__label">アクセス：</p>
+                    <p class="p-access__text">JR「xxx」下車 徒歩xx分、都営地下鉄三田線「xxx」（I05）下車　徒歩x分</p>
+                 </div>
+                 <div class="p-access__item">
+                   <p class="p-access__label">定休日：</p>
+                   <p class="p-access__text">日曜日</p>
+                 </div>
+                  <div class="p-reservation">
+                   <p class="p-reservation__title">ご予約はこちら</p>
+                   <p class="p-reservation__tel">xx-xxx-xxxx</p>
+                 </div>
                </div>
-               <div class="p-access__item">
-                 <p class="p-access__label">営業時間：</p>
-                 <p class="p-access__text">11：00〜24：00（LO. 23:00）</p>
+                <div class="p-access-map">
+                 <iframe class="p-access__image"  title="店舗の場所" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8254264727425!2d139.76255983114243!3d35.68130028953324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1761589256261!5m2!1sja!2sjp" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                </div>
-               <div class="p-access__item">
-                 <p class="p-access__label">アクセス：</p>
-                  <p class="p-access__text">JR「xxx」下車 徒歩xx分、都営地下鉄三田線「xxx」（I05）下車　徒歩x分</p>
-               </div>
-               <div class="p-access__item">
-                 <p class="p-access__label">定休日：</p>
-                 <p class="p-access__text">日曜日</p>
-               </div>
-                <div class="p-reservation">
-                 <p class="p-reservation__title">ご予約はこちら</p>
-                 <p class="p-reservation__tel">xx-xxx-xxxx</p>
-               </div>
-             </div>
-              <div class="p-access-map">
-               <iframe class="p-access__image" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8254264727425!2d139.76255983114243!3d35.68130028953324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1761589256261!5m2!1sja!2sjp" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-             </div>
+          </div>
         </section>
     </main>
     <footer class="l-footer">

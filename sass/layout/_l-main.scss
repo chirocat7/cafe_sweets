@@ -1,15 +1,23 @@
-// _layout.scss の一番上
-@use "../config/config";
-@use "../config/mixin";
-
-
+// mainのレイアウト設定
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .l-section {
-  margin-top: 100px;
-  margin-bottom: 50px;
-  @include mixin.inner;
+  padding-top: c.$space-section-pc;
 
-  @include mixin.mq("sp") {
-     margin-top: 50px;
+  @include m.mq("sp") {
+    padding-top: 40px;
   }
+
+ &.is-last-section {
+    padding-bottom: c.$space-section-pc;
+
+    @include m.mq("sp") {
+    padding-bottom: c.$space-section-sp;
+    }
+  }
+}
+
+.l-container {
+  @include m.inner; // 幅を制限して中央に寄せる
 }

@@ -1,5 +1,6 @@
-@use "../config/config";
-@use "../config/mixin";
+//_p-mvにのみ適応する余白、配置、装飾
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .p-mv {
   &__image-wrapper {
@@ -7,7 +8,7 @@
     height: 700px;
     position: relative;
 
-    @include mixin.mq("sp") {
+    @include m.mq("sp") {
       height: 400px;
     }
   }
@@ -19,21 +20,19 @@
   }
 
   &__content {
-  width: 40%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  padding: 105px 60px;
-  transition: transform 0.8s ease-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-family: config.$font-title;
-    @include mixin.mq("tab") {
-      width: 50%;
-    }
-     @include mixin.mq("sp") {
-      width: 100%;
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    padding: 105px 60px;
+    font-family: c.$font-title;
+    transition: transform 0.8s ease-out;
+
+    @include m.mq("tab") { width: 50%; }
+    @include m.mq("sp") { width: 100%; }
   }
 
   &__name {
@@ -41,16 +40,16 @@
   }
 
   &__text {
-    color: config.$white;
-    font-size: 18px;
-    line-height: 1.5;
-    @include mixin.mq("sp") {
-      font-size: 16px;
+    color: c.$white;
+    @include m.fz("ml");
+
+    @include m.mq("sp") {
+    @include m.fz("m");
     }
   }
 
   &__name {
-    color: config.$white;
+    color: c.$white;
     padding-top: 20px;
   }
 }

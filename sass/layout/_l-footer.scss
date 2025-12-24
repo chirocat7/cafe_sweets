@@ -1,24 +1,26 @@
-// _layout.scss の一番上
-@use "../config/config";
-@use "../config/mixin";
+// footerのレイアウト設定
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .l-footer {
   width: 100%;
-  margin: auto;
   text-align: center;
-  background-color: config.$color-accent-bg;
-  font-family: config.$font-title;
-  padding: 20px;
-  font-size: 9px;
-  color: config.$white;
+  background-color: c.$color-accent-bg;
+  font-family: c.$font-title;
+  color: c.$white;
+  padding: 30px c.$pad-base;
+  @include m.flex-v-center;
+  @include m.flex-col(10px);
 
-  &__social {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-       margin-bottom: 10px;
-    @include mixin.mq("pc") {
+  &__social.c-social {
+    @include m.flex-center;
+    gap: 20px;
+
+    @include m.mq("pc") {
      display: none;
+    }
   }
+  &__copyright {
+    font-size: 0.8em;
   }
 }

@@ -2,16 +2,19 @@
 // メディアクエリ（レスポンシブ）を簡単に書く
 @use "sass:math";
 @use "sass:map";
-@use "../config/config"; // ブレイクポイント等の変数を読み込む場合
+@use "../config/config";
 
 // 1. メディアクエリ (Media Query)
 // 使い方: @include m.mq(sp) { ... }
-
 @mixin mq($breakpoint) {
   // $breakpoints マップから指定した名前（tabなど）の条件を取得
   @media #{map.get(config.$breakpoints, $breakpoint)} {
-    @content; // ここに書いた中身がメディアクエリの中に入る
+    @content;
   }
+}
+
+@mixin fz($size) {
+  font-size: map.get(config.$font-sizes, $size);
 }
 
 // 2. 上下左右中央揃え (Flexbox)
@@ -22,8 +25,26 @@
   align-items: center;
 }
 
+@mixin flex-col($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+// スマホで縦並びにするセット（よく使われていますね）
+@mixin flex-column-sp {
+  display: flex;
+  @include mq("sp") {
+    flex-direction: column;
+  }
+}
+
 @mixin grid-3 {
-  flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -74,4 +95,8 @@
 @function rem($px) {
   // 「/」を「math.div」に変更
   @return math.div($px, 16) * 1rem;
+}
+
+@mixin fz($size-name: "m") {
+  font-size: map.get(config.$font-sizes, $size-name);
 }

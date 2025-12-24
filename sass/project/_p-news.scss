@@ -1,36 +1,43 @@
-@use "../config/mixin";
-@use "../config/config";
-
+//_p-newsにのみ適応する余白、配置、装飾
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .p-news {
+  @include m.flex-col(15px);
+
+  &__heading {
+    margin-bottom: c.$space-title-bottom;
+  }
 
   &__title {
-    font-size: 20px;
+    @include m.fz("l");
     font-weight: 500;
   }
 
   &__introduction {
+    * + & {
     margin-top: 15px;
+    }
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    @include m.flex-col(40px);
   }
 
   &__item {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 50px;
-    @include mixin.mq("tab") {
-      gap: 30px;
-    }
-    @include mixin.mq("sp") {
-      flex-direction: column;
+    gap: 30px;
+
+    @include m.mq("tab") {
+      gap: 15px;
     }
 
+    @include m.mq("sp") {
+      flex-direction: column;
+      gap: 5px;
+    }
   }
 
   &__bg {
@@ -39,21 +46,21 @@
     background-image: url(../../img/news_back.jpg);
     background-position: center;
     background-size: cover;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    @include mixin.mq("sp") {
+    @include m.flex-center;
+
+    @include m.mq("sp") {
       width: 100%;
       height: 400px;
-      background-size: cover;
     }
   }
 
   &__body {
     text-align: center;
-    padding: 20px;
-    gap: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-inline: c.$pad-base;
+    @include m.flex-col(8px);
   }
 
   &__image {
@@ -61,13 +68,12 @@
     height: 500px;
     object-fit: cover;
     object-position: center;
-    @include mixin.mq("tab") {
+
+    @include m.mq("tab") {
       height: 350px;
     }
-      @include mixin.mq("sp") {
+    @include m.mq("sp") {
       width: 100%;
     }
   }
-
-
 }

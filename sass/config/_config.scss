@@ -2,30 +2,47 @@
 // 色の定義
 // 色・サイズを今回のLP用に書き換えるだけ！
 
-// --- Colors ---
+// --- 文字色 ---
 $color-main: #333;
-$color-base-bg: #ffd7f678;
-$color-accent-bg: #e993d7;
-$color-translucent-bg: rgba(0,0,0,0.5);
 $black-light: #333;
 $black: #000;
 $white: #fff;
 $color-border: #ccc;
 
-// --- Breakpoints ---
-$breakpoints: (
-  "sp": "screen and (max-width: 599px)",
-  "tab": "screen and (max-width: 1024px)",
-  "pc": "screen and (min-width: 601px)",
-);
+//---背景色
+$color-base-bg: #ffd7f678;
+$color-accent-bg: #e993d7;
+$color-translucent-bg: rgba(0,0,0,0.5);
 
-// --- Layout ---
-$inner-width: 1200px; // ★追記：l-containerなどで使用
-
-// --- Typography ---
+// --- フォント ---
 $font-base: "M PLUS 2", sans-serif;
 $font-title: "Hachi Maru Pop", cursive;
 
-// --- Others ---
+//--- 文字サイズ ---
+$font-sizes: (
+  "s": 14px,
+  "m": 16px, // base
+  "ml": 18px,// Medium-Large
+  "l": 20px, // title
+  "xl": 24px // heading
+);
+
+//--- 余白 ---
+$space-section-pc: 50px; // _l-main.scss で使用
+$space-section-sp: 30px;
+$pad-base: 20px; // ヘッダー、フッター、コンテナ等で共通化
+$space-title-bottom: 50px;
+
+// --- ブレイクポイント ---
+$breakpoints: (
+  "sp": "screen and (max-width: 599px)",
+  "tab": "screen and (max-width: 1024px)",
+  "pc": "screen and (min-width: 600px)",
+);
+
+// --- レイアウト ---
+$inner-width: 1200px; // ★追記：l-containerなどで使用
+
+// --- その他 ---
 $radius-base: 4px;
 $transition-base: 0.3s ease;

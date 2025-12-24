@@ -1,35 +1,39 @@
-@use "../config/mixin";
-@use "../config/config";
+//_p-accessにのみ適応する余白、配置、装飾
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .p-access {
+  padding-bottom: 80px;
+
+  &__heading {
+    margin-bottom: c.$space-title-bottom;
+  }
 
   &__info {
     display: flex;
     gap: 20px;
 
-  @include mixin.mq("sp") {
-    flex-direction: column;
-  }
-
+    @include m.mq("sp") {
+      flex-direction: column;
+    }
   }
 
   &__list {
     width: 60%;
-    display: flex;
-    flex-direction: column;
+    @include m.flex-col(12px);
     background-color: #e7ffce;
     border-radius: 10px;
-    padding: 20px;
-    line-height: 2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-inline: c.$pad-base;
 
-    @include mixin.mq("sp") {
+    @include m.mq("sp") {
       width: 100%;
+    }
   }
-  }
-
   &__item {
-      display: flex;
-      flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__label {
@@ -38,9 +42,8 @@
 
   &-map {
     width: 40%;
-    align-items: center;
-    display: flex;
-    @include mixin.mq("sp") {
+    @include m.flex-v-center;
+    @include m.mq("sp") {
       width: 100%;
     }
   }
@@ -51,18 +54,27 @@
 }
 
 .p-reservation {
-  border: 1px solid #73bf6d;
   background-color: #5d9a59;
+  border: 1px solid #73bf6d;
   border-radius: 10px;
-  margin: 0 auto;
+  padding: 15px 10px;
+  color: c.$white;
   text-align: center;
-  min-width: 300px;
-  margin-top: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: config.$white;
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto; // 中央寄せ
 
-  @include mixin.mq("sp") {
-    min-width: 250px;
+  &__title {
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+
+  &__tel {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  @include m.mq("sp") {
+    max-width: 250px;
   }
 }

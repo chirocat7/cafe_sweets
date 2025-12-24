@@ -1,21 +1,24 @@
-@use "../config/config";
-@use "../config/mixin";
-
+//socialアイコンの見た目を決める(共通)
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .c-social {
+  display: flex;
+  gap: 15px;
+
   &__link {
-    @include mixin.flex-center;
+    @include m.flex-center;
     width: 30px;
     height: 30px;
-    transition: opacity 0.3s;
-    &:hover {
+    transition: c.$transition-base;
+
+    @include m.hover {
       opacity: 0.7;
     }
-
   }
   &__icon {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
   }
 }

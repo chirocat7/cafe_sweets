@@ -1,56 +1,52 @@
-// _layout.scss の一番上
-@use "../config/config";
-@use "../config/mixin";
-
+//headerのレイアウト設定
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
 .l-header {
-  width: 100%;
-  padding: 20px;
-  margin: auto;
-  text-align: center;
-  background-color: config.$color-accent-bg;
-  font-family: config.$font-title;
   position: relative;
+  z-index: 100;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-inline: c.$pad-base;
+  text-align: center;
+  background-color: c.$color-accent-bg;
+  font-family: c.$font-title;
 
-    @include mixin.mq("sp") {
-      padding: 10px;
+  &__logo {
+    color: c.$white;
+    font-size: 32px;
+    font-weight: bold;
   }
 
   &__nav {
-    padding: 20px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    @include mixin.mq("sp") {
+    padding: 10px 10px 20px;
+    @include m.mq("sp") {
       padding: 10px;
     }
   }
 
-  &__logo {
-    color: config.$white;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: normal;
+  &__social.c-social {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+
+    @include m.mq("tab") {
+      @include m.flex-col(5px);
+      right: 20px;
+      gap: 5px;
+    }
+
+    @include m.mq("sp") {
+      display: none; // sp以下では表示しない
+    }
   }
-  &__social {
-  position: absolute;
-  top: 50px;
-  right: 30px;
-  display: flex;
-  gap: 20px;
-  @include mixin.mq("tab") {
-    flex-direction: column;
-    top: 15px;
-    gap: 5px;
-    right: 20px;
-  }
-  @include mixin.mq("sp") {
-      display: none;
-    
-  }
+  @include m.mq("sp") {
+    padding: 10px;
   }
 }
 
 .l-flex {
-  @include mixin.flex-center;
+  @include m.flex-center;
 }

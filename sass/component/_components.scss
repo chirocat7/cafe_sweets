@@ -5,35 +5,49 @@
 テキスト: フォントの太さ、行間、ホバーした時の色の変化。
 アニメーション: マウスを乗せた時や、クリックした時の「動きのルール」。
 */
-@use "../config/config";
-@use "../config/mixin";
+@use "../config/config" as c;
+@use "../config/mixin" as m;
 
-.c-title-heading {
-  border-bottom: 8px solid #e7e7e7;
-  text-align: center;
+%title-base {
+  font-family: c.$font-title;
   line-height: 1.2;
-  color: black;
-  width: 30%;
-  margin: 0 auto;
-  padding-top: 30px;
-  font-family: config.$font-title;
-  font-size: 24px;
-  @include mixin.mq("sp") {
-    width: 50%;
-  }
-
+  color: #000;
 }
 
-.c-container {
-  margin-top: 80px;
-  @include mixin.mq("sp") {
-  margin-top: 40px;
+// 小さい下線（どこでも使える共通部品）
+.c-title {
+  @extend %title-base;
+  @include m.flex-v-center;
+  gap: 10px;
+  border-bottom: 4px solid c.$color-border;
+  padding-bottom: 4px;
+  font-weight: 500;
+  @include m.fz("ml");
+  font-family: c.$font-base;
+
+  // Newsなどで使う中央寄せModifier
+  &--center {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
   }
+}
+
+// 大きい下線（セクション用）
+.c-title-heading {
+  @extend %title-base;
+  margin-inline: auto;
+  width: fit-content;
+  border-bottom: 8px solid c.$color-border;
+  padding-bottom: 8px;
+  text-align: center;
+  @include m.fz("xl");
 }
 
 .c-order2 {
   order: 2;
-  @include mixin.mq("sp") {
+  @include m.mq("sp") {
     order: initial;
   }
 }
@@ -41,21 +55,20 @@
 .c-btn {
   display: inline-block;
   padding: 1em 2em;
-  background-color: config.$color-main;
+  background-color: c.$color-main;
   color: #fff;
   text-decoration: none;
-  border-radius: config.$radius-base;
-  transition: config.$transition-base;
+  border-radius: c.$radius-base;
+  transition: c.$transition-base;
   cursor: pointer;
   border: none;
 
-  @include mixin.hover {
+  @include m.hover {
     opacity: 0.8;
   }
 
   &__text {
     font-weight: bold;
-    font-size: mixin.rem(16);
+    font-size: m.rem(16);
   }
-
 }

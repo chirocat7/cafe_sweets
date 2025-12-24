@@ -3,22 +3,25 @@
 
 'use strict';
 /* ページロード時のフェードイン */
-const element = document.querySelector(".c-fade-in");
-
-window.addEventListener("load", function() {
-  // ページロード完了後、CSSクラスを追加してフェードインを有効化
-  element.classList.add("c-fade-in-active");
-});
-// jQueryでDOMツリーの構築完了を待って処理を実行するための記述
 $(() => {
-    // slide-in機能を持つ要素（の親）を監視
-    $('.p-mv').on('mouseenter', function() {
-        // マウスが乗った要素の中にある「c-slide-left」を探してクラスを付ける
-        $(this).find('.c-slide-left').addClass('is-active');
-    });
+    // --- 1. ページロード時のフェードイン（安全な書き方） ---
+    const $fadeInElement = $(".c-fade-in"); // jQueryで要素を取得
+    
+    // 要素が1つ以上存在するかチェック
+    if ($fadeInElement.length > 0) {
+        $(window).on('load', function() {
+            $fadeInElement.addClass("c-fade-in-active");
+        });
+    }
 
-    $('.p-mv').on('mouseleave', function() {
-        $(this).find('.c-slide-left').removeClass('is-active');
+    // --- 2. ホバーアニメーション ---
+    $('.p-mv').on({
+        'mouseenter': function() {
+            $(this).find('.c-slide-left').addClass('is-active');
+        },
+        'mouseleave': function() {
+            $(this).find('.c-slide-left').removeClass('is-active');
+        }
     });
 });
 

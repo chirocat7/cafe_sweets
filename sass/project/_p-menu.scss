@@ -1,35 +1,37 @@
-@use "../config/mixin";
-@use "../config/config";
+//_p-menuにのみ適応する余白、配置、装飾
+@use "../config/mixin" as m;
+@use "../config/config" as c;
 
 .p-menu {
-
-  &__title {
-    display: flex;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    align-items: center;
-    border-bottom: 4px solid #e7e7e7;
+  &__heading {
+    margin-bottom: c.$space-title-bottom;
   }
 
-  &__list {
-    gap: 40px 20px;
-    @include mixin.grid-3;
-    @include mixin.mq("tab") {
-      grid-template-columns: repeat(2, 1fr); // タブレットは2列
-    }
-    @include mixin.mq("sp") {
-      grid-template-columns: repeat(1,1fr); // タブレットは2列
-    }
+&__list {
+  gap: 40px 20px;
+  @include m.grid-3;
+  @include m.mq("tab") {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-/* JavaScriptで追加されるクラス：画面内に入った時の状態 */
+  @include m.mq("sp") {
+    grid-template-columns: 1fr;
+  }
+}
+
+  &__price {
+    white-space: nowrap; // ★価格を絶対に改行させない
+    flex-shrink: 0;      // ★親がflexの場合、価格が縮まないように固定する
+    margin-left: auto;   // ★商品名との間に隙間を作り、右寄せにする
+    font-weight: bold;
+  }
+
   &__body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-family: config.$font-base;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-inline: 10px;
+    font-family: c.$font-base;
+    @include m.flex-col(10px);
   }
   &__image-wrapper {
     width: 100%;
@@ -41,4 +43,16 @@
     height: 300px;
     object-fit: cover;
   }
+}
+
+.p-label-new {
+  background-color: #acabab;
+  color: c.$white;
+  @include m.fz("s");
+  border-radius: 3px;
+  text-align: center;
+  min-width: 40px;
+  min-height: 25px;
+  @include m.flex-center;
+  flex-shrink: 0;
 }
