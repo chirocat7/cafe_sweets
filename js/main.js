@@ -46,7 +46,6 @@ $(() => {
         });
     }
 
-
     const targets = $('.p-news__item, .p-menu__item');
     // スクロール時と初回ロード時にinviewチェックを実行
     $(window).on('scroll', () => {
